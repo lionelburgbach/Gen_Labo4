@@ -16,7 +16,7 @@ public class Product {
         this.currency = currency;
     }
 
-    public void productAttribute(StringBuffer sb) {
+    public void attributeToString(StringBuffer sb) {
         sb.append("{");
         sb.append("\"code\": \"");
         sb.append(code);
@@ -25,7 +25,7 @@ public class Product {
         sb.append(color.getColor());
         sb.append("\", ");
 
-        if (!size.getSize().equals(Product.SIZE_NOT_APPLICABLE)) {
+        if (!size.getSize().equals(SIZE_NOT_APPLICABLE)) {
             sb.append("\"size\": \"");
             sb.append(size.getSize());
             sb.append("\", ");
