@@ -20,12 +20,6 @@ public class Product {
         return code;
     }
 
-
-    public int getColor() {
-        return color.getColor();
-    }
-
-
     public String getColorFor() {
         switch (color.getColor()) {
             case 1:
