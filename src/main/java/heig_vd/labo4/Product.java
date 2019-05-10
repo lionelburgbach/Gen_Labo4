@@ -36,26 +36,26 @@ public class Product {
         return currency;
     }
 
-    public void productAttribute(StringBuffer sb, Product product) {
+    public void productAttribute(StringBuffer sb) {
         sb.append("{");
         sb.append("\"code\": \"");
-        sb.append(product.getCode());
+        sb.append(getCode());
         sb.append("\", ");
         sb.append("\"color\": \"");
-        sb.append(product.getColorFor());
+        sb.append(getColorFor());
         sb.append("\", ");
 
-        if (!product.getSize().equals(Product.SIZE_NOT_APPLICABLE)) {
+        if (!getSize().equals(Product.SIZE_NOT_APPLICABLE)) {
             sb.append("\"size\": \"");
-            sb.append(product.getSize());
+            sb.append(getSize());
             sb.append("\", ");
         }
 
         sb.append("\"price\": ");
-        sb.append(product.getPrice());
+        sb.append(getPrice());
         sb.append(", ");
         sb.append("\"currency\": \"");
-        sb.append(product.getCurrency());
+        sb.append(getCurrency());
         sb.append("\"}, ");
     }
 }
