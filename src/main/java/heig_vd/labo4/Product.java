@@ -1,7 +1,7 @@
 package heig_vd.labo4;
 
 public class Product {
-    public static final int SIZE_NOT_APPLICABLE = -1;
+    public static final String SIZE_NOT_APPLICABLE = "Invalid Size";
     private String code;
     private Color color;
     private Size size;
@@ -24,7 +24,7 @@ public class Product {
         return color.getColor();
     }
 
-    public int getSize() {
+    public String getSize() {
         return size.getSize();
     }
 
