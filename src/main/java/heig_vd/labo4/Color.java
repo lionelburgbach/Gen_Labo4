@@ -8,8 +8,16 @@ public class Color {
         this.color = color;
     }
 
-    public int getColor(){
-        return color;
+    public String getColor(){
+        switch (color) {
+            case 1:
+                return "blue";
+            case 2:
+                return "red";
+            case 3:
+                return "yellow";
+            default:
+                return "no color";
+        }
     }
-
 }

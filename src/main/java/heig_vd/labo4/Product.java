@@ -21,16 +21,7 @@ public class Product {
     }
 
     public String getColorFor() {
-        switch (color.getColor()) {
-            case 1:
-                return "blue";
-            case 2:
-                return "red";
-            case 3:
-                return "yellow";
-            default:
-                return "no color";
-        }
+        return color.getColor();
     }
 
     public int getSize() {
