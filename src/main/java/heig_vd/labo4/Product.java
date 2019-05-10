@@ -16,26 +16,18 @@ public class Product {
         this.currency = currency;
     }
 
-    public String getColorFor() {
-        return color.getColor();
-    }
-
-    public String getSize() {
-        return size.getSize();
-    }
-
     public void productAttribute(StringBuffer sb) {
         sb.append("{");
         sb.append("\"code\": \"");
         sb.append(code);
         sb.append("\", ");
         sb.append("\"color\": \"");
-        sb.append(getColorFor());
+        sb.append(color.getColor());
         sb.append("\", ");
 
-        if (!getSize().equals(Product.SIZE_NOT_APPLICABLE)) {
+        if (!size.getSize().equals(Product.SIZE_NOT_APPLICABLE)) {
             sb.append("\"size\": \"");
-            sb.append(getSize());
+            sb.append(size.getSize());
             sb.append("\", ");
         }
 
