@@ -20,8 +20,9 @@ public class Product {
         return code;
     }
 
+
     public int getColor() {
-        return color.color;
+        return color.getColor();
     }
 
     public int getSize() {
