@@ -16,10 +16,6 @@ public class Product {
         this.currency = currency;
     }
 
-    public String getCode() {
-        return code;
-    }
-
     public String getColorFor() {
         return color.getColor();
     }
@@ -28,18 +24,10 @@ public class Product {
         return size.getSize();
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public String getCurrency() {
-        return currency;
-    }
-
     public void productAttribute(StringBuffer sb) {
         sb.append("{");
         sb.append("\"code\": \"");
-        sb.append(getCode());
+        sb.append(code);
         sb.append("\", ");
         sb.append("\"color\": \"");
         sb.append(getColorFor());
@@ -52,10 +40,10 @@ public class Product {
         }
 
         sb.append("\"price\": ");
-        sb.append(getPrice());
+        sb.append(price);
         sb.append(", ");
         sb.append("\"currency\": \"");
-        sb.append(getCurrency());
+        sb.append(currency);
         sb.append("\"}, ");
     }
 }
