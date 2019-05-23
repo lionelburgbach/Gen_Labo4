@@ -1,5 +1,8 @@
 package heig_vd.labo4;
 
+import heig_vd.labo4.color.BlueColor;
+import heig_vd.labo4.color.Color;
+import heig_vd.labo4.color.RedColor;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
@@ -35,7 +38,7 @@ public class OrdersWriterTest {
 
     @Test
     public void OneOrderWithOneProduct() {
-        order111.AddProduct(new Product("Shirt", new Color(1), new Size(3), 2.99, "TWD"));
+        order111.AddProduct(new Product("Shirt", new BlueColor(), new Size(3), 2.99, "TWD"));
 
         String order111Json = JsonOrder111WithProduct("{\"code\": \"Shirt\", \"color\": \"blue\", \"size\": \"M\", \"price\": 2.99, \"currency\": \"TWD\"}");
         assertEquals("{\"orders\": [" + order111Json + "]}", new OrdersWriter(orders).getContents());
@@ -43,7 +46,7 @@ public class OrdersWriterTest {
 
     @Test
     public void OneOrderWithOneProductNoSize() {
-        order111.AddProduct(new Product("Pot", new Color(2), new Size(-1), 16.50, "SGD"));
+        order111.AddProduct(new Product("Pot", new RedColor(), new Size(-1), 16.50, "SGD"));
 
         String order111Json = JsonOrder111WithProduct("{\"code\": \"Pot\", \"color\": \"red\", \"price\": 16.5, \"currency\": \"SGD\"}");
         assertEquals("{\"orders\": [" + order111Json + "]}", new OrdersWriter(orders).getContents());
