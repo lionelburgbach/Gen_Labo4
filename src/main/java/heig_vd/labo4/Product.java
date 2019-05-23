@@ -17,25 +17,12 @@ public class Product {
     }
 
     public void attributeToString(StringBuffer sb) {
-        sb.append("{");
-        sb.append("\"code\": \"");
-        sb.append(code);
-        sb.append("\", ");
-        sb.append("\"color\": \"");
-        sb.append(color.getColor());
-        sb.append("\", ");
+        sb.append("{\"code\": \"").append(code).append("\", \"color\": \"").append(color.getColor()).append("\", ");
 
         if (!size.getSize().equals(SIZE_NOT_APPLICABLE)) {
-            sb.append("\"size\": \"");
-            sb.append(size.getSize());
-            sb.append("\", ");
+            sb.append("\"size\": \"").append(size.getSize()).append("\", ");
         }
 
-        sb.append("\"price\": ");
-        sb.append(price);
-        sb.append(", ");
-        sb.append("\"currency\": \"");
-        sb.append(currency);
-        sb.append("\"}, ");
+        sb.append("\"price\": ").append(price).append(", \"currency\": \"").append(currency).append("\"}, ");
     }
 }
