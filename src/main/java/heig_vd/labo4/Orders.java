@@ -10,35 +10,12 @@ public class Orders {
         orders.add(order);
     }
 
-    public int getOrdersCount() {
-        return orders.size();
-    }
-
-    public Order getOrder(int i) {
-        return orders.get(i);
-    }
-
     public String getContents(){
 
         StringBuffer sb = new StringBuffer("{\"orders\": [");
 
         for (int i = 0; i < orders.size(); i++) {
-            Order order = orders.get(i);
-            sb.append("{");
-            sb.append("\"id\": ");
-            sb.append(order.getOrderId());
-            sb.append(", ");
-            sb.append("\"products\": [");
-            for (int j = 0; j < order.getProductsCount(); j++) {
-                order.getProduct(j).attributeToString(sb);
-            }
-
-            if (order.getProductsCount() > 0) {
-                sb.delete(sb.length() - 2, sb.length());
-            }
-
-            sb.append("]");
-            sb.append("}, ");
+            orders.get(i).getContents(sb);
         }
 
         if (orders.size() > 0) {
