@@ -1,5 +1,7 @@
 package heig_vd.labo4;
 
+import heig_vd.labo4.color.Color;
+
 public class Product {
     public static final String SIZE_NOT_APPLICABLE = "Invalid Size";
     private String code;
@@ -17,7 +19,7 @@ public class Product {
     }
 
     public void attributeToString(StringBuffer sb) {
-        sb.append("{\"code\": \"").append(code).append("\", \"color\": \"").append(color.getColor()).append("\", ");
+        sb.append("{\"code\": \"").append(code).append("\", \"color\": \"").append(color).append("\", ");
 
         if (!size.getSize().equals(SIZE_NOT_APPLICABLE)) {
             sb.append("\"size\": \"").append(size.getSize()).append("\", ");
