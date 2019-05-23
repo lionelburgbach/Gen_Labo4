@@ -3,7 +3,9 @@ package heig_vd.labo4;
 import heig_vd.labo4.color.Color;
 
 public class Product {
-    public static final String SIZE_NOT_APPLICABLE = "Invalid Size";
+
+    private static final Size SIZE_NOT_APPLICABLE = Size.INVALID_SIZE;
+    public enum Size {XS, S, M, L, XL, XXL, INVALID_SIZE}
     private String code;
     private Color color;
     private Size size;
@@ -21,8 +23,8 @@ public class Product {
     public void attributeToString(StringBuffer sb) {
         sb.append("{\"code\": \"").append(code).append("\", \"color\": \"").append(color).append("\", ");
 
-        if (!size.getSize().equals(SIZE_NOT_APPLICABLE)) {
-            sb.append("\"size\": \"").append(size.getSize()).append("\", ");
+        if (size != SIZE_NOT_APPLICABLE) {
+            sb.append("\"size\": \"").append(size).append("\", ");
         }
 
         sb.append("\"price\": ").append(price).append(", \"currency\": \"").append(currency).append("\"}, ");
